@@ -1,0 +1,32 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library - Book and Publisher List</title>
+</head>
+<body>
+    <h1>Available Books</h1>
+    <ul>
+        {% for book in books %}
+            <li>
+                <strong>{{ book.title }}</strong> -
+                Category: {{ book.get_category_display }} |
+                Pages: {{ book.num_pages }} |
+                Price: ${{ book.price }} |
+                Publisher: {{ book.publisher.name }}
+            </li>
+        {% empty %}
+            <li>No books available.</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Publishers</h2>
+    <ul>
+        {% for publisher in publishers %}
+            <li>{{ publisher.name }} - {{ publisher.city }}</li>
+        {% empty %}
+            <li>No publishers available.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
