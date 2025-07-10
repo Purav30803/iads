@@ -10,6 +10,8 @@ path('<int:book_id>/', views.detail, name='detail'),
 
     path('feedback/', views.getFeedback, name='feedback1'),
 path('findbooks/', views.findbooks, name='findbooks'),
+path('place_order/', views.place_order, name='place_order'),
+
 
 
 ]
