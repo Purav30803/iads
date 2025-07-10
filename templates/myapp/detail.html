@@ -6,7 +6,7 @@
 
 {% block body_block %}
     <h2>{{ book.title }}</h2>
-    <p><strong>Price:</strong> ${{ book.price }}</p>
+    <p class="data"><strong>Price:</strong> ${{ book.price }}</p>
     <p><strong>Publisher:</strong> {{ book.publisher.name }}</p>
     <p><strong>Category:</strong> {{ book.get_category_display }}</p>
     <p><strong>Number of Pages:</strong> {{ book.num_pages }}</p>

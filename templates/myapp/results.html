@@ -1,0 +1,26 @@
+{% extends 'myapp/base.html' %}
+
+{% block body_block %}
+  <h2>Hello {{ name|default:"User" }}!</h2>
+
+  {% if category %}
+    <p>You selected the category: <strong>{{ category }}</strong></p>
+  {% else %}
+    <p>You did not select any category.</p>
+  {% endif %}
+
+  {% if booklist %}
+    <p>Here are the books that match your criteria:</p>
+    <ul>
+      {% for book in booklist %}
+        <li>
+          <strong>{{ book.title }}</strong> by {{ book.publisher.name }} <br>
+          Category: {{ book.get_category_display }}<br>
+          Price: ${{ book.price }} | Pages: {{ book.num_pages }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No books found under the given criteria.</p>
+  {% endif %}
+{% endblock %}
